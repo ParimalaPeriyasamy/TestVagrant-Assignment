@@ -32,7 +32,6 @@ public class NDTVHomePage extends BasePage {
 			weatherMenu.click();
 		} catch (ElementClickInterceptedException e) {
 			popup.click();
-			//waitTillElementToBeClickable(2, subMenu);
 			submenu.click();
 			weatherMenu.click();
 		} catch (Exception e) {
