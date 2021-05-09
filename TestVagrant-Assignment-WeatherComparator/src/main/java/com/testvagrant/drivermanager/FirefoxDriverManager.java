@@ -11,11 +11,6 @@ public class FirefoxDriverManager implements IDriver {
 	private final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	private final FirefoxOptions options = new FirefoxOptions();
 
-	// this class not available outside of this package, use DriverFactory class to create driver object
-	FirefoxDriverManager() {
-		super();
-	}
-	
 	public void setup() {
 		WebDriverManager.firefoxdriver().setup();
 	}
