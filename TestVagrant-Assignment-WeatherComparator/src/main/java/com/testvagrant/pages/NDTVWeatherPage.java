@@ -52,10 +52,6 @@ public class NDTVWeatherPage extends BasePage {
 	
 	private final String selectCityInMap = "//div[contains(text(),'%s')]";
 
-	public String getPageTitle() {
-		return driver.getTitle();
-	}
-
 	public ArrayList<String> getDefaultSelectedCitiesInCheckbox() {
 
 		waitTillVisibilityOfAllElements(10, checkBox);
