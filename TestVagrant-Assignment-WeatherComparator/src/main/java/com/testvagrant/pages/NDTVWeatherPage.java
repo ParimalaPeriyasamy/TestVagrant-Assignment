@@ -80,6 +80,7 @@ public class NDTVWeatherPage extends BasePage {
 		
 		waitTillVisibilityOfElement(3, mapPopup);
 		
+		//Replacing all chars that are not 0-9 and period
 		String humTemp = humidity.getText().replaceAll("[^0-9\\.]", "").trim();
 		String degTemp = degrees.getText().replaceAll("[^0-9\\.]", "").trim();
 		String farTemp = fahrenheit.getText().replaceAll("[^0-9\\.]", "").trim();
