@@ -32,9 +32,10 @@ public class NDTVWeatherPageTest {
 	public Object[] cityNamesProvider() {
 		return new Object[] { "Ahmedabad", "Mumbai", "Chennai" };
 	}
-
+	
+	
 	@Test(dataProvider = "Cities")
-	public void checkWeatherElementsAreDisplayedForACity(String city) {
+	public void checkWeatherElementsAreDisplayedForSelectedCity(String city) {
 		Boolean result = basepage.goToNDTVHomePage(property.getProperty("url")).goToWeatherPage().unSelectAllCities()
 				.selectACityInCheckBox(city).clickOnACityInMap(city).checkWeatherElementsAreDisplayed();
 
@@ -42,7 +43,7 @@ public class NDTVWeatherPageTest {
 	}
 
 	@Test(dataProvider = "Cities")
-	public void validateWeatherDetailsDisplayedForACity(String city) {
+	public void validateWeatherDetailsDisplayedForSelectedCity(String city) {
 		WeatherModel weatherObj = basepage.goToNDTVHomePage(property.getProperty("url")).goToWeatherPage().unSelectAllCities()
 				.selectACityInCheckBox(city).clickOnACityInMap(city).getTempDetailsAsWeatherObject();
 		
