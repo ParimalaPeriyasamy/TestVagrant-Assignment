@@ -19,12 +19,14 @@ public class APIHelper {
 		property.readPropertiesFile("src/test/resources/config.properties");
 		RestAssured.baseURI = property.getProperty("uri");
 	}
-
+	
+	//Request Object
 	private RequestSpecification getRequest(HashMap<String, String> queryParams) {
 		setBaseURI();
 		return RestAssured.given().queryParams(queryParams);
 	}
 
+	//Response object
 	public Response createRequest(String requestType, String path, HashMap<String, String> queryParams) {
 		Response response = null;
 

@@ -54,20 +54,6 @@ public class OpenWeatherAPITest {
 		assertThat(errorMsg).contains("Invalid API key");
 	}
 	
-	@Test
-	public void validateResponseCodeAndErrorMessageWithInValidCityName() {
-		HashMap<String, String> queryParams = new HashMap<>();
-		queryParams.put("q", "invalid");
-		queryParams.put("units", "metric");
-		queryParams.put("appid", property.getProperty("apiKey"));
-		
-		Response val = apiHelper.createRequest("get", path, queryParams);
-		String errorMsg = val.getBody().jsonPath().get("message");
-		
-		assertThat(val.getStatusCode()).isEqualTo(404);
-		assertThat(errorMsg).contains("city not found");
-	}
-	
 	@DataProvider(name = "Cities")
 	public Object[] cityNamesProvider() {
 		return new Object[] { "Ahmedabad", "Mumbai", "Chennai" };
