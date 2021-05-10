@@ -52,23 +52,6 @@ public class NDTVWeatherPage extends BasePage {
 	
 	private final String selectCityInMap = "//div[contains(text(),'%s')]";
 
-	public ArrayList<String> getDefaultSelectedCitiesInCheckbox() {
-
-		waitTillVisibilityOfAllElements(10, checkBox);
-
-		return checkBox.stream().filter(element -> element.isSelected())
-				.map(element -> element.getAttribute("id").trim())
-				.collect(Collectors.toCollection(ArrayList<String>::new));
-	}
-
-	public ArrayList<String> getDefaultCitiesAppearedInMap() {
-
-		waitTillVisibilityOfAllElements(10, mapContainer);
-
-		return mapContainer.stream().map(element -> element.getText().trim())
-				.collect(Collectors.toCollection(ArrayList<String>::new));
-	}
-
 	public NDTVWeatherPage unSelectAllCities() {
 		waitTillVisibilityOfAllElements(10, checkBox);
 		checkBox.stream().filter(element -> element.isSelected()).forEach(element -> element.click());

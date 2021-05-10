@@ -16,7 +16,8 @@ public class BasePage {
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
 	}
-
+	
+	//To launch URL
 	public NDTVHomePage goToNDTVHomePage(String URL) {
 		driver.get(URL);
 		return new NDTVHomePage(driver);
@@ -26,6 +27,7 @@ public class BasePage {
 		return (JavascriptExecutor) driver;
 	}
 
+	//To set WebdriverWait/ExplicitWait
 	public WebDriverWait setExplicitWaitTimeOutAndWait(long timeOutInSeconds) {
 		return new WebDriverWait(driver, timeOutInSeconds);
 	}
