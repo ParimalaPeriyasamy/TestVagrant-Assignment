@@ -2,7 +2,7 @@
 
 #### Project Description
 
-This project is to compare Weather Information between Web and API with user defined variance range.
+This project is to compare Weather Information[Humidity,Temperature in Degree&Fahrenheit] between Web and API with user defined variance range.
 
 #### Project Setup
 Clone the repository or download the project and place it into your local machine using the below command
